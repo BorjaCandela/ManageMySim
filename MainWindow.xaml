@@ -1,0 +1,45 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ManageMySim"
+        xmlns:Classes="clr-namespace:ManageMySim.Classes" x:Class="ManageMySim.MainWindow"
+        mc:Ignorable="d"
+        Title="Manage My Sim" Loaded="Window_Loaded" Height="768" Width="1280" Icon="MainLogo.png" ResizeMode="NoResize">
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Height="685" Margin="12,10,0,0" VerticalAlignment="Top" Width="1252" >
+            <TabItem x:Name="MainTab" Header="Main Tab"/>
+            <TabItem x:Name="JobsTab" Header="Jobs">
+                <Grid x:Name="JobsGrid" Background="#FFE5E5E5">
+                    <DataGrid x:Name="JobsDataGrid" AutoGenerateColumns="True" HorizontalAlignment="Left" Height="637" Margin="10,10,0,0" VerticalAlignment="Top" Width="1226">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Job ID" Width="100" Binding="{Binding JobID}" />
+                            <DataGridTextColumn Header="Description" Width="400" Binding="{Binding JobDescription}" />
+                            <DataGridTextColumn Header="Comments" Width="673" Binding="{Binding JobComments}" />
+                            <DataGridComboBoxColumn Header="Status" Width="50" /> <!--</DataGridComboBoxColumn>ItemsSource="{Binding JobStatus}--> 
+
+                            
+                            
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="MaintTab" Header="Maintenance">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem x:Name="DRTab" Header="Discrepancies">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem x:Name="QTGTab" Header="QTGs">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem x:Name="SessionsTab" Header="Sessions">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <Grid Height="100" Width="100"/>
+        </TabControl>
+        <Label Content="Logged as: " HorizontalAlignment="Left" Margin="12,700,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelUser"  HorizontalAlignment="Left" Margin="76,700,0,0" VerticalAlignment="Top" xmlns:local="clr-namespace:ManageMySim.Classes"  Content="{}" />
+    </Grid>
+</Window>
